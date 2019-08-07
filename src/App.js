@@ -29,7 +29,7 @@ class App extends React.Component {
           <input className="input" name="firstName" onChange={this.handleChange} type="text" placeholder="First Name"/> 
           <input className="input" name="lastName" onChange={this.handleChange} type="text" placeholder="Last Name"/>
           <select name="theme" onChange={this.handleChange}>
-            <option value="">--Select--</option>
+            <option value="">--Select Theme--</option>
             <option value="bubblegum">Bubblegum</option>
             <option value="plum">Plum Tree</option>
             <option value="peaches">Peaches and Cream</option>
