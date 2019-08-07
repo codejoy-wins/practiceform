@@ -1,6 +1,12 @@
 .App {
   text-align: center;
 }
+a{
+  text-decoration: none;
+}
+a:hover{
+  color: gold;
+}
 .input{
   padding: 2vw;
 }

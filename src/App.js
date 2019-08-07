@@ -40,6 +40,9 @@ class App extends React.Component {
         <p className={this.state.theme}>{this.state.firstName} {this.state.lastName}</p>
         <p className={this.state.theme}>{this.state.area}</p>
         </div>
+        <footer>
+          <a href="https://maxjann.com">Jann Software</a>
+        </footer>
       </div>
     )
   }
