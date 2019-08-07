@@ -2,25 +2,48 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(){
+    super()
+    this.state={
+      firstName: "",
+      lastName: "",
+      theme: "",
+      area: ""
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(event){
+    const {name, value} = event.target
+    this.setState({
+      [name]: value
+    })
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <h1 className={this.state.theme}>{this.state.area === "" ? "Who are you?" : "On my way ;)"}</h1>
+        <form>
+          <input className="input" name="firstName" onChange={this.handleChange} type="text" placeholder="First Name"/> 
+          <input className="input" name="lastName" onChange={this.handleChange} type="text" placeholder="Last Name"/>
+          <select name="theme" onChange={this.handleChange}>
+            <option value="">--Select--</option>
+            <option value="bubblegum">Bubblegum</option>
+            <option value="plum">Plum Tree</option>
+            <option value="peaches">Peaches and Cream</option>
+          </select><br></br>
+          <textarea placeholder="Address" onChange={this.handleChange} name="area" rows="12" cols="52"/>
+        </form>
+        <div>
+        <p className={this.state.theme}>{this.state.firstName} {this.state.lastName}</p>
+        <p className={this.state.theme}>{this.state.area}</p>
+        </div>
+      </div>
+    )
+  }
+  
 }
 
 export default App;
